@@ -1,0 +1,123 @@
+/*清楚所有样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*设置最小宽度*/
+body{
+	min-width: 1200px;
+}
+
+/*设置背景容器*/
+.bg{
+	/*相对定位。所有子元素采用绝对定位，此处作为父元素进行相对定位*/
+	position: relative;
+	background: url(../img/2.jpg);
+	/*背景图片平铺*/
+	background-repeat: round;
+	width: 100%;
+	height: 636px;
+	/*超出隐藏*/
+	overflow: hidden;
+}
+
+/*设置杆子的样式*/
+.pole{
+	position: absolute;
+	left: 39%;
+	top: 230px;
+	width: 300px;
+}
+
+/*设置轮子容器*/
+.con{
+	position: absolute;
+	left: 33.5%;
+	top: 15px;
+	width: 450px;
+	height: 450px;
+	background: url(../img/fsw.png);
+	background-repeat: round;
+	/*引用设置好的动画*/
+	animation: rotate_wheel 10s linear infinite;
+}
+
+/*设置所有小伙伴们的共同样式.*/
+/*在此处设置,可以避免在每个小伙伴的样式中各自设置，从而避免不必要的代码重复*/
+.con>img{
+	position: absolute;
+	width: 80px;
+	animation: rotate_boy 10s linear infinite;
+	/*改变旋转点*/
+	/*默认的旋转点是中心旋转(50%,50%)*/
+	transform-origin: 50% 0;
+}
+
+/*定位每一个小伙伴,让他们去到该去的地方*/
+.boy1{
+	top: 10px;
+	left: 185px;
+}
+.boy2{
+	top: 430px;
+	left: 195px;
+}
+.boy3{
+	top: 225px;
+	left: -23px;
+}
+.boy4{
+	top: 210px;
+	left: 395px;
+}
+.boy5{
+	top: 90px;
+	left: 350px;
+}
+.boy6{
+	top: 90px;
+	left: 30px;
+}
+.boy7{
+	top: 380px;
+	left: 50px;
+}
+.boy8{
+	top: 350px;
+	left: 340px;
+}
+
+/*设置广告牌和小箭头的样式*/
+.board_1{
+	position: absolute;
+	left: 37.5%;
+	top: 150px;
+	width: 350px;
+}
+.board_2{
+	position: absolute;
+	left: 40.5%;
+	top: 290px;
+	width: 250px;
+}
+.jiantou{
+	position: absolute;
+	left: 49.5%;
+	top: 320px;
+	width: 30px;
+}
+
+/*定义轮子旋转的动画*/
+@keyframes rotate_wheel{
+	/*旋转一圈*/
+	from{transform: rotate(0);}
+	to{transform: rotate(360deg);}
+}
+
+/*定义小伙伴旋转的动画*/
+@keyframes rotate_boy{
+	/*与轮子转动的方向相反,旋转一圈*/
+	from{transform: rotate(0);}
+	to{transform: rotate(-360deg);}
+}
